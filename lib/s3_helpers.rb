@@ -105,7 +105,8 @@ if defined?(Fog)
     connection = Fog::Storage.new({
       :provider                 => 'AWS',
       :aws_access_key_id        => key,
-      :aws_secret_access_key    => secret
+      :aws_secret_access_key    => secret,
+      :region                   => 'eu-west-1'
     })
     directory = connection.directories.new(:key => bucket)
     return directory
